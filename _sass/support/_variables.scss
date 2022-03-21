@@ -28,166 +28,51 @@ $font-size-9: 36px !default;
 $font-size-10: 42px !default;
 $font-size-10-sm: 48px !default;
 
-//
-// Colors
-//
+// Default Light Theme
 
-$white: #fff !default;
+$body-background-color-light: $white !default;
+$sidebar-color-light: $grey-lt-000 !default;
+$search-background-color-light: $white !default;
+$table-background-color-light: $white !default;
+$code-background-color-light: $grey-lt-000 !default;
+$feedback-color-light: darken($sidebar-color-light, 3%) !default;
 
-$grey-dk-000: #959396 !default;
-$grey-dk-100: #5c5962 !default;
-$grey-dk-200: #44434d !default;
-$grey-dk-250: #302d36 !default;
-$grey-dk-300: #27262b !default;
+$body-text-color-light: $grey-dk-100 !default;
+$body-heading-color-light: $grey-dk-300 !default;
+$search-result-preview-color-light: $grey-dk-000 !default;
+$nav-child-link-color-light: $grey-dk-100 !default;
 
-$grey-lt-000: #f5f6fa !default;
-$grey-lt-100: #eeebee !default;
-$grey-lt-200: #ecebed !default;
-$grey-lt-300: #e6e1e8 !default;
+$link-color-light: $purple-000 !default;
+$link-hover-color-light: darken($link-color-light, 2%) !default;
+$link-active-color-light: darken($link-color-light, 4%) !default;
 
-$purple-000: #7253ed !default;
-$purple-100: #5e41d0 !default;
-$purple-200: #4e26af !default;
-$purple-300: #381885 !default;
+$base-button-color-light: #f7f7f7 !default;
+$btn-primary-color-light: $purple-100 !default;
+$btn-hover-color-light: darken($base-button-color-light, 1%) !default;
+$btn-active-color-light: darken($base-button-color-light, 3%) !default;
 
-$blue-000: #2c84fa !default;
-$blue-100: #2869e6 !default;
-$blue-200: #264caf !default;
-$blue-300: #183385 !default;
+// Default Dark Theme
 
-$green-000: #41d693 !default;
-$green-100: #11b584 !default;
-$green-200: #009c7b !default;
-$green-300: #026e57 !default;
+$body-background-color-dark: $grey-dk-300 !default;
+$sidebar-color-dark: $grey-dk-300 !default;
+$search-background-color-dark: $grey-dk-250 !default;
+$table-background-color-dark: $grey-dk-250 !default;
+$code-background-color-dark: $grey-dk-250 !default;
+$feedback-color-dark: darken($sidebar-color-dark, 3%) !default;
 
-$yellow-000: #ffeb82 !default;
-$yellow-100: #fadf50 !default;
-$yellow-200: #f7d12e !default;
-$yellow-300: #e7af06 !default;
+$body-text-color-dark: $grey-lt-300 !default;
+$body-heading-color-dark: $grey-lt-000 !default;
+$search-result-preview-color-dark: $grey-dk-000 !default;
+$nav-child-link-color-dark: $grey-dk-000 !default;
 
-$red-000: #f77e7e !default;
-$red-100: #f96e65 !default;
-$red-200: #e94c4c !default;
-$red-300: #dd2e2e !default;
+$link-color-dark: $blue-000 !default;
+$link-hover-color-dark: darken($link-color-dark, 2%) !default;
+$link-active-color-dark: darken($link-color-dark, 4%) !default;
 
-// $colors: (
-//   "light": (
-//     "body-background": $white,
-//     "sidebar": $grey-lt-000,
-//     "search-background": $white,
-//     "table-background": $white,
-//     "code-background": $grey-lt-000,
-//     "feedback": darken(map-get($colors, "light", "sidebar"), 3%),
-  
-//     "body-text": $grey-dk-100,
-//     "body-heading": $grey-dk-300,
-//     "search-result-preview": $grey-dk-000,
-//     "nav-child-link": $grey-dk-100,
-  
-//     "link": $purple-000,
-//     "link-hover": darken($link-color-light, 2%),
-//     "link-active": darken($link-color-light, 4%),
-  
-//     "base-button": #f7f7f7,
-//     "btn-primary": $purple-100,
-//     "btn-hover": darken($base-button-color-light, 1%),
-//     "btn-active": darken($base-button-color-light, 3%)
-//   ),
-//   "dark": (
-//     "body-background": $grey-dk-300,
-//     "sidebar": $grey-dk-300,
-//     "search-background": $grey-dk-250,
-//     "table-background": $grey-dk-250,
-//     "code-background": $grey-dk-250,
-//     "feedback": darken($sidebar-color-dark, 3%),
-
-//     "body-text": $grey-lt-300,
-//     "body-heading": $grey-lt-000,
-//     "search-result-preview": $grey-dk-000,
-//     "nav-child-link": $grey-dk-000,
-
-//     "link": $blue-000,
-//     "link-hover": darken(map-get($color, "dark", "link"), 2%),
-//     "link-active": darken(map-get($color, "dark", "link"), 4%),
-
-//     "base-button": $grey-dk-250,
-//     "btn-primary": $blue-200,
-//     "btn-hover": darken($base-button-color-dark, 1%),
-//     "btn-active": darken($base-button-color-dark, 3%)
-//   )
-// ) !default;
-
-$body-background-colors: (
-  "light": $white, 
-  "dark": $grey-dk-300
-) !default;
-$sidebar-colors: (
-  "light": $grey-lt-000, 
-  "dark": $grey-dk-300
-) !default;
-$search-background-colors: (
-  "light": $white, 
-  "dark": $grey-dk-250
-) !default;
-$table-background-colors: (
-  "light": $white, 
-  "dark": $grey-dk-250
-) !default;
-$code-background-colors: (
-  "light": $grey-lt-000, 
-  "dark": $grey-dk-250
-) !default;
-$feedback-colors: (
-  "light": darken(map-get($sidebar-colors, "light"), 3%), 
-  "dark": darken(map-get($sidebar-colors, "dark"), 3%)
-) !default;
-
-$body-text-colors: (
-  "light": $grey-dk-100, 
-  "dark": $grey-lt-300
-) !default;
-$body-heading-colors: (
-  "light": $grey-dk-300, 
-  "dark": $grey-lt-000
-) !default;
-$search-result-preview-colors: (
-  "light": $grey-dk-000, 
-  "dark": $grey-dk-000
-) !default;
-$nav-child-link-colors: (
-  "light": $grey-dk-100, 
-  "dark": $grey-dk-000
-) !default;
-
-$link-colors: (
-  "light": $purple-000, 
-  "dark": $blue-000
-) !default;
-$link-hover-colors: (
-  "light": darken(map-get($link-colors, "light"), 2%), 
-  "dark": darken(map-get($link-colors, "dark"), 2%)
-) !default;
-$link-active-colors: (
-  "light": darken(map-get($link-colors, "light"), 4%), 
-  "dark": darken(map-get($link-colors, "dark"), 4%)
-) !default;
-
-$base-button-colors: (
-  "light": #f7f7f7, 
-  "dark": $grey-dk-250
-) !default;
-$btn-primary-colors: (
-  "light": $purple-100, 
-  "dark": $blue-200
-) !default;
-$btn-hover-colors: (
-  "light": darken(map-get($base-button-colors, "light"), 1%), 
-  "dark": darken(map-get($base-button-colors, "dark"), 1%)
-) !default;
-$btn-active-colors: (
-  "light": darken(map-get($base-button-colors, "light"), 3%), 
-  "dark": darken(map-get($base-button-colors, "dark"), 3%)
-) !default;
+$base-button-color-dark: $grey-dk-250 !default;
+$btn-primary-color-dark: $blue-200 !default;
+$btn-hover-color-dark: darken($base-button-color-dark, 1%) !default;
+$btn-active-color-dark: darken($base-button-color-dark, 3%) !default;
 
 //
 // Spacing
@@ -227,8 +112,7 @@ $sp-10: map-get($spacers, sp-10) !default; // 4  rem == 64px
 $border: 1px solid !default;
 $border-radius: 4px !default;
 
-$border-color: $grey-lt-100 !default;
-
+$border-color-light: $grey-lt-100 !default;
 $border-color-dark: $grey-dk-200 !default;
 
 //
@@ -259,26 +143,6 @@ $media-queries: (
   xl: 1400px,
 ) !default;
 
-@mixin set_color_vars($mode) {
-  --body-background-color: #{map-get($body-background-colors, $mode)};
-  --sidebar-color: #{map-get($sidebar-colors, $mode)};
-  --search-background-color: #{map-get($search-background-colors, $mode)};
-  --table-background-color: #{map-get($table-background-colors, $mode)};
-  --code-background-color: #{map-get($code-background-colors, $mode)};
-  --feedback-color: #{map-get($feedback-colors, $mode)};
-  --body-text-color: #{map-get($body-text-colors, $mode)};
-  --body-heading-color: #{map-get($body-heading-colors, $mode)};
-  --search-result-preview-color: #{map-get($search-result-preview-colors, $mode)};
-  --nav-child-link-color: #{map-get($nav-child-link-colors, $mode)};
-  --link-color: #{map-get($link-colors, $mode)};
-  --link-hover-color: #{map-get($link-hover-colors, $mode)};
-  --link-active-color: #{map-get($link-active-colors, $mode)};
-  --btn-primary-color: #{map-get($btn-primary-colors, $mode)};
-  --btn-hover-color: #{map-get($btn-hover-colors, $mode)};
-  --btn-active-color: #{map-get($btn-active-colors, $mode)};
-  --base-button-color: #{map-get($base-button-colors, $mode)};
-}
-
 @mixin set_for_light_theme {
   html, html[data-theme="light"] { 
     @content;
@@ -304,27 +168,62 @@ $media-queries: (
 }
 
 @include set_for_light_theme {
-  @include set_color_vars("light")
+  --body-background-color: #{$body-background-color-light};
+  --sidebar-color: #{$sidebar-color-light};
+  --search-background-color: #{$search-background-color-light};
+  --table-background-color: #{$table-background-color-light};
+  --code-background-color: #{$code-background-color-light};
+  --feedback-color: #{$feedback-color-light};
+  --body-text-color: #{$body-text-color-light};
+  --body-heading-color: #{$body-heading-color-light};
+  --search-result-preview-color: #{$search-result-preview-color-light};
+  --nav-child-link-color: #{$nav-child-link-color-light};
+  --link-color: #{$link-color-light};
+  --link-hover-color: #{$link-hover-color-light};
+  --link-active-color: #{$link-active-color-light};
+  --btn-primary-color: #{$btn-primary-color-light};
+  --btn-hover-color: #{$btn-hover-color-light};
+  --btn-active-color: #{$btn-active-color-light};
+  --base-button-color: #{$base-button-color-light};
+  --border-color: #{$border-color-light};
 }
 
 @include set_for_dark_theme {
-  @include set_color_vars("dark")
+  --body-background-color: #{$body-background-color-dark};
+  --sidebar-color: #{$sidebar-color-dark};
+  --search-background-color: #{$search-background-color-dark};
+  --table-background-color: #{$table-background-color-dark};
+  --code-background-color: #{$code-background-color-dark};
+  --feedback-color: #{$feedback-color-dark};
+  --body-text-color: #{$body-text-color-dark};
+  --body-heading-color: #{$body-heading-color-dark};
+  --search-result-preview-color: #{$search-result-preview-color-dark};
+  --nav-child-link-color: #{$nav-child-link-color-dark};
+  --link-color: #{$link-color-dark};
+  --link-hover-color: #{$link-hover-color-dark};
+  --link-active-color: #{$link-active-color-dark};
+  --btn-primary-color: #{$btn-primary-color-dark};
+  --btn-hover-color: #{$btn-hover-color-dark};
+  --btn-active-color: #{$btn-active-color-dark};
+  --base-button-color: #{$base-button-color-dark};
+  --border-color: #{$border-color-dark};
 }
 
-$body-background-color: var(--body-background-color);
-$sidebar-color: var(--sidebar-color);
-$search-background-color: var(--search-background-color);
-$table-background-color: var(--table-background-color);
-$code-background-color: var(--code-background-color);
-$feedback-color: var(--feedback-color);
-$body-text-color: var(--body-text-color);
-$body-heading-color: var(--body-heading-color);
-$search-result-preview-color: var(--search-result-preview-color);
-$nav-child-link-color: var(--nav-child-link-color);
-$link-color: var(--link-color);
-$link-hover-color: var(--link-hover-color);
-$link-active-color: var(--link-active-color);
-$btn-primary-color: var(--btn-primary-color);
-$btn-hover-color: var(--btn-hover-color);
-$btn-active-color: var(--btn-active-color);
-$base-button-color: var(--base-button-color);
+$body-background-color: var(--body-background-color) !default;
+$sidebar-color: var(--sidebar-color) !default;
+$search-background-color: var(--search-background-color) !default;
+$table-background-color: var(--table-background-color) !default;
+$code-background-color: var(--code-background-color) !default;
+$feedback-color: var(--feedback-color) !default;
+$body-text-color: var(--body-text-color) !default;
+$body-heading-color: var(--body-heading-color) !default;
+$search-result-preview-color: var(--search-result-preview-color) !default;
+$nav-child-link-color: var(--nav-child-link-color) !default;
+$link-color: var(--link-color) !default;
+$link-hover-color: var(--link-hover-color) !default;
+$link-active-color: var(--link-active-color) !default;
+$btn-primary-color: var(--btn-primary-color) !default;
+$btn-hover-color: var(--btn-hover-color) !default;
+$btn-active-color: var(--btn-active-color) !default;
+$base-button-color: var(--base-button-color) !default;
+$border-color: var(--border-color) !default;

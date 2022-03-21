@@ -1,8 +1,35 @@
 ---
 ---
-{% if site.color_scheme and site.color_scheme != "nil" %}
-  {% assign color_scheme = site.color_scheme %}
-{% else %}
-  {% assign color_scheme = "default" %}
+{% if site.color_scheme.palette and site.color_scheme.palette != "default"  %}
+  {% assign palette = site.color_scheme.palette %}
 {% endif %}
-{% include css/just-the-docs.scss.liquid color_scheme=color_scheme %}
+
+{% if site.color_scheme.theme and site.color_scheme.theme != "default"  %}
+  {% assign theme = site.color_scheme.theme %}
+{% elsif site.color_scheme and site.color_scheme != "default" %}
+  {% assign theme = site.color_scheme %}
+{% endif %}
+
+{% if site.color_scheme.code and site.color_scheme.code != "default" %}
+  {% assign code_default = site.color_scheme.code %}
+{% else %}
+  {% assign code_default = "default" %}
+{% endif %}
+
+{% if site.color_scheme.code.light and site.color_scheme.code.light != "default" %}
+  {% assign code_light = site.color_scheme.code.light %}
+{% else %}
+  {% assign code_light = code_default %}
+{% endif %}
+
+{% if site.color_scheme.code.dark and site.color_scheme.code.dark != "default" %}
+  {% assign code_dark = site.color_scheme.code.dark %}
+{% else %}
+  {% assign code_dark = code_default %}
+{% endif %}
+
+{% include css/just-the-docs.scss.liquid 
+  palette=palette
+  theme=theme
+  code_light=code_light 
+  code_dark=code_dark %}

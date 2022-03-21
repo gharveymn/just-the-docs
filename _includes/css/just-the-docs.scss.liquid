@@ -1,7 +1,36 @@
 {% if site.logo %}
 $logo: "{{ site.logo | absolute_url }}";
 {% endif %}
+
+@import "./color_schemes/palettes/base";
+
+{% if include.palette %}
+  @import "./color_schemes/palettes/{{ include.palette }}";
+{% endif %}
+
+{% if include.theme %}
+  @import "./color_schemes/themes/{{ include.theme }}";
+{% endif %}
+
 @import "./support/support";
-@import "./color_schemes/{{ include.color_scheme }}";
+
+html, html[data-theme="light"] {
+  @import "./color_schemes/code/{{ include.code_light }}";
+}
+
+html[data-theme="dark"] {
+  @import "./color_schemes/code/{{ include.code_dark }}";
+}
+
+@media (prefers-color-scheme: dark) {
+  html, html[data-theme="dark"] {
+    @import "./color_schemes/code/{{ include.code_dark }}";
+  }
+
+  html[data-theme="light"] {
+    @import "./color_schemes/code/{{ include.code_light }}";
+  }
+}
+
 @import "./modules";
 {% include css/custom.scss.liquid %}

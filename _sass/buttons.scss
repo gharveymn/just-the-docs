@@ -102,12 +102,16 @@
 }
 
 .btn-primary {
-  @include set_for_light_theme {
-    @include btn-color($white, map-get($btn-primary-colors, "light"));
-  }
-
-  @include set_for_dark_theme {
-    @include btn-color($white, map-get($btn-primary-colors, "dark"));
+  @if str-index($btn-primary-color, "var(--") {
+    @include set_for_light_theme {
+      @include btn-color($white, $btn-primary-color-light);
+    }
+  
+    @include set_for_dark_theme {
+      @include btn-color($white, $btn-primary-color-dark);
+    }
+  } @else {
+    @include btn-color($white, $btn-primary-color);
   }
 }
 
