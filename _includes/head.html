@@ -10,6 +10,25 @@
     {% endif %}
   {% endunless %}
 
+  <script type="text/javascript">
+    let initial_theme = localStorage.getItem("theme-override");
+    if (null === initial_theme) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        initial_theme = "dark";
+      else
+        initial_theme = "light";
+    }
+
+    document.documentElement.setAttribute("data-theme", initial_theme);
+
+    function overrideTheme(theme, callback = null) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme-override", theme);
+      if (null !== callback)
+        callback(theme);
+    }
+  </script>
+
   <link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}" type="image/x-icon">
 
   <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}">

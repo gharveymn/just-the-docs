@@ -70,20 +70,124 @@ $red-100: #f96e65 !default;
 $red-200: #e94c4c !default;
 $red-300: #dd2e2e !default;
 
-$body-background-color: $white !default;
-$sidebar-color: $grey-lt-000 !default;
-$search-background-color: $white !default;
-$table-background-color: $white !default;
-$code-background-color: $grey-lt-000 !default;
-$feedback-color: darken($sidebar-color, 3%) !default;
+// $colors: (
+//   "light": (
+//     "body-background": $white,
+//     "sidebar": $grey-lt-000,
+//     "search-background": $white,
+//     "table-background": $white,
+//     "code-background": $grey-lt-000,
+//     "feedback": darken(map-get($colors, "light", "sidebar"), 3%),
+  
+//     "body-text": $grey-dk-100,
+//     "body-heading": $grey-dk-300,
+//     "search-result-preview": $grey-dk-000,
+//     "nav-child-link": $grey-dk-100,
+  
+//     "link": $purple-000,
+//     "link-hover": darken($link-color-light, 2%),
+//     "link-active": darken($link-color-light, 4%),
+  
+//     "base-button": #f7f7f7,
+//     "btn-primary": $purple-100,
+//     "btn-hover": darken($base-button-color-light, 1%),
+//     "btn-active": darken($base-button-color-light, 3%)
+//   ),
+//   "dark": (
+//     "body-background": $grey-dk-300,
+//     "sidebar": $grey-dk-300,
+//     "search-background": $grey-dk-250,
+//     "table-background": $grey-dk-250,
+//     "code-background": $grey-dk-250,
+//     "feedback": darken($sidebar-color-dark, 3%),
 
-$body-text-color: $grey-dk-100 !default;
-$body-heading-color: $grey-dk-300 !default;
-$search-result-preview-color: $grey-dk-000 !default;
-$nav-child-link-color: $grey-dk-100 !default;
-$link-color: $purple-000 !default;
-$btn-primary-color: $purple-100 !default;
-$base-button-color: #f7f7f7 !default;
+//     "body-text": $grey-lt-300,
+//     "body-heading": $grey-lt-000,
+//     "search-result-preview": $grey-dk-000,
+//     "nav-child-link": $grey-dk-000,
+
+//     "link": $blue-000,
+//     "link-hover": darken(map-get($color, "dark", "link"), 2%),
+//     "link-active": darken(map-get($color, "dark", "link"), 4%),
+
+//     "base-button": $grey-dk-250,
+//     "btn-primary": $blue-200,
+//     "btn-hover": darken($base-button-color-dark, 1%),
+//     "btn-active": darken($base-button-color-dark, 3%)
+//   )
+// ) !default;
+
+$body-background-colors: (
+  "light": $white, 
+  "dark": $grey-dk-300
+) !default;
+$sidebar-colors: (
+  "light": $grey-lt-000, 
+  "dark": $grey-dk-300
+) !default;
+$search-background-colors: (
+  "light": $white, 
+  "dark": $grey-dk-250
+) !default;
+$table-background-colors: (
+  "light": $white, 
+  "dark": $grey-dk-250
+) !default;
+$code-background-colors: (
+  "light": $grey-lt-000, 
+  "dark": $grey-dk-250
+) !default;
+$feedback-colors: (
+  "light": darken(map-get($sidebar-colors, "light"), 3%), 
+  "dark": darken(map-get($sidebar-colors, "dark"), 3%)
+) !default;
+
+$body-text-colors: (
+  "light": $grey-dk-100, 
+  "dark": $grey-lt-300
+) !default;
+$body-heading-colors: (
+  "light": $grey-dk-300, 
+  "dark": $grey-lt-000
+) !default;
+$search-result-preview-colors: (
+  "light": $grey-dk-000, 
+  "dark": $grey-dk-000
+) !default;
+$nav-child-link-colors: (
+  "light": $grey-dk-100, 
+  "dark": $grey-dk-000
+) !default;
+
+$link-colors: (
+  "light": $purple-000, 
+  "dark": $blue-000
+) !default;
+$link-hover-colors: (
+  "light": darken(map-get($link-colors, "light"), 2%), 
+  "dark": darken(map-get($link-colors, "dark"), 2%)
+) !default;
+$link-active-colors: (
+  "light": darken(map-get($link-colors, "light"), 4%), 
+  "dark": darken(map-get($link-colors, "dark"), 4%)
+) !default;
+
+$base-button-colors: (
+  "light": #f7f7f7, 
+  "dark": $grey-dk-250
+) !default;
+$btn-primary-colors: (
+  "light": $purple-100, 
+  "dark": $blue-200
+) !default;
+$btn-hover-colors: (
+  "light": darken(map-get($base-button-colors, "light"), 1%), 
+  "dark": darken(map-get($base-button-colors, "dark"), 1%)
+) !default;
+$btn-active-colors: (
+  "light": darken(map-get($base-button-colors, "light"), 3%), 
+  "dark": darken(map-get($base-button-colors, "dark"), 3%)
+) !default;
 
 //
 // Spacing
@@ -122,7 +226,10 @@ $sp-10: map-get($spacers, sp-10) !default; // 4  rem == 64px
 
 $border: 1px solid !default;
 $border-radius: 4px !default;
+
 $border-color: $grey-lt-100 !default;
+
+$border-color-dark: $grey-dk-200 !default;
 
 //
 // Grid system
@@ -151,3 +258,65 @@ $media-queries: (
   lg: $content-width + $nav-width,
   xl: 1400px,
 ) !default;
+
+@mixin set_color_vars($mode) {
+  --body-background-color: #{map-get($body-background-colors, $mode)};
+  --sidebar-color: #{map-get($sidebar-colors, $mode)};
+  --search-background-color: #{map-get($search-background-colors, $mode)};
+  --table-background-color: #{map-get($table-background-colors, $mode)};
+  --code-background-color: #{map-get($code-background-colors, $mode)};
+  --feedback-color: #{map-get($feedback-colors, $mode)};
+  --body-text-color: #{map-get($body-text-colors, $mode)};
+  --body-heading-color: #{map-get($body-heading-colors, $mode)};
+  --search-result-preview-color: #{map-get($search-result-preview-colors, $mode)};
+  --nav-child-link-color: #{map-get($nav-child-link-colors, $mode)};
+  --link-color: #{map-get($link-colors, $mode)};
+  --link-hover-color: #{map-get($link-hover-colors, $mode)};
+  --link-active-color: #{map-get($link-active-colors, $mode)};
+  --btn-primary-color: #{map-get($btn-primary-colors, $mode)};
+  --btn-hover-color: #{map-get($btn-hover-colors, $mode)};
+  --btn-active-color: #{map-get($btn-active-colors, $mode)};
+  --base-button-color: #{map-get($base-button-colors, $mode)};
+}
+
+@mixin set_for_themes {
+  html, html[data-theme="light"] { 
+    @content("light");
+  }
+  
+  html[data-theme="dark"] { 
+    @content("dark");
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    html, html[data-theme="dark"] {
+      @content("dark");
+    }
+    
+    html[data-theme="light"] { 
+      @content("light");
+    }
+  }
+}
+
+@include set_for_themes using ($mode) {
+  @include set_color_vars($mode);
+}
+
+$body-background-color: var(--body-background-color);
+$sidebar-color: var(--sidebar-color);
+$search-background-color: var(--search-background-color);
+$table-background-color: var(--table-background-color);
+$code-background-color: var(--code-background-color);
+$feedback-color: var(--feedback-color);
+$body-text-color: var(--body-text-color);
+$body-heading-color: var(--body-heading-color);
+$search-result-preview-color: var(--search-result-preview-color);
+$nav-child-link-color: var(--nav-child-link-color);
+$link-color: var(--link-color);
+$link-hover-color: var(--link-hover-color);
+$link-active-color: var(--link-active-color);
+$btn-primary-color: var(--btn-primary-color);
+$btn-hover-color: var(--btn-hover-color);
+$btn-active-color: var(--btn-active-color);
+$base-button-color: var(--base-button-color);

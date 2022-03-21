@@ -448,13 +448,11 @@ function searchLoaded(index, docs) {
 // Switch theme
 
 jtd.getTheme = function() {
-  var cssFileHref = document.querySelector('[rel="stylesheet"]').getAttribute('href');
-  return cssFileHref.substring(cssFileHref.lastIndexOf('-') + 1, cssFileHref.length - 4);
+  return document.documentElement.getAttribute("data-theme");
 }
 
 jtd.setTheme = function(theme) {
-  var cssFile = document.querySelector('[rel="stylesheet"]');
-  cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | absolute_url }}' + theme + '.css');
+  document.documentElement.setAttribute("data-theme", theme);
 }
 
 // Document ready

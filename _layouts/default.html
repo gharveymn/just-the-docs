@@ -198,5 +198,16 @@ layout: table_wrappers
       <div class="search-overlay"></div>
     {% endif %}
   </div>
+
+  <script type="text/javascript">
+    function systemThemePreferenceCallback(system_prefers_dark) {
+      if (system_prefers_dark.matches)
+        document.documentElement.setAttribute('data-theme', 'dark');
+      else 
+        document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.removeItem("theme");
+    }
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(systemThemePreferenceCallback);
+  </script>
 </body>
 </html>
