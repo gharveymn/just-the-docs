@@ -101,9 +101,13 @@
   }
 }
 
-@include set_for_themes using ($mode) {
-  .btn-primary {
-    @include btn-color($white, map-get($btn-primary-colors, $mode));
+.btn-primary {
+  @include set_for_light_theme {
+    @include btn-color($white, map-get($btn-primary-colors, "light"));
+  }
+
+  @include set_for_dark_theme {
+    @include btn-color($white, map-get($btn-primary-colors, "dark"));
   }
 }
 
