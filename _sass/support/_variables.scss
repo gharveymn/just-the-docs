@@ -39,6 +39,8 @@ $feedback-color-light: darken($sidebar-color-light, 3%) !default;
 
 $body-text-color-light: $grey-dk-100 !default;
 $body-heading-color-light: $grey-dk-300 !default;
+$search-input-color-light: $grey-dk-000 !default;
+$search-input-active-color-light: $body-text-color-light !default;
 $search-result-preview-color-light: $grey-dk-000 !default;
 $nav-child-link-color-light: $grey-dk-100 !default;
 
@@ -62,6 +64,8 @@ $feedback-color-dark: darken($sidebar-color-dark, 3%) !default;
 
 $body-text-color-dark: $grey-lt-300 !default;
 $body-heading-color-dark: $grey-lt-000 !default;
+$search-input-color-dark: $grey-dk-000 !default;
+$search-input-active-color-dark: $body-text-color-dark !default;
 $search-result-preview-color-dark: $grey-dk-000 !default;
 $nav-child-link-color-dark: $grey-dk-000 !default;
 
@@ -176,6 +180,8 @@ $media-queries: (
   --feedback-color: #{$feedback-color-light};
   --body-text-color: #{$body-text-color-light};
   --body-heading-color: #{$body-heading-color-light};
+  --search-input-color: #{$search-input-color-light};
+  --search-input-active-color: #{$search-input-active-color-light};
   --search-result-preview-color: #{$search-result-preview-color-light};
   --nav-child-link-color: #{$nav-child-link-color-light};
   --link-color: #{$link-color-light};
@@ -197,6 +203,8 @@ $media-queries: (
   --feedback-color: #{$feedback-color-dark};
   --body-text-color: #{$body-text-color-dark};
   --body-heading-color: #{$body-heading-color-dark};
+  --search-input-color: #{$search-input-color-dark};
+  --search-input-active-color: #{$search-input-active-color-dark};
   --search-result-preview-color: #{$search-result-preview-color-dark};
   --nav-child-link-color: #{$nav-child-link-color-dark};
   --link-color: #{$link-color-dark};
@@ -217,6 +225,8 @@ $code-background-color: var(--code-background-color) !default;
 $feedback-color: var(--feedback-color) !default;
 $body-text-color: var(--body-text-color) !default;
 $body-heading-color: var(--body-heading-color) !default;
+$search-input-color: var(--search-input-color) !default;
+$search-input-active-color: var(--search-input-active-color) !default;
 $search-result-preview-color: var(--search-result-preview-color) !default;
 $nav-child-link-color: var(--nav-child-link-color) !default;
 $link-color: var(--link-color) !default;
