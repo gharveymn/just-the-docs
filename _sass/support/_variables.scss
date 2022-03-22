@@ -244,10 +244,10 @@ $base-button-color: var(--base-button-color) !default;
 $border-color: var(--border-color) !default;
 
 @function get_rgb_value($var) {
-  @if str-index(#{$var}, "var(--") {
+  @if str-index("#{$var}", "var(--") {
     @return var(--#{str-slice($var, 7, -2)}-rgb);
   } @else {
-    @return rgb(red($var), green($var), blue($var));
+    @return $var;
   }
 }
 
