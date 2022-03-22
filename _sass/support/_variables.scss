@@ -171,50 +171,55 @@ $media-queries: (
   }
 }
 
+@mixin declare_color_vars($name, $color) {
+  --#{$name}: #{$color};
+  --#{$name}-rgb: #{red($color), green($color), blue($color)};
+}
+
 @include set_for_light_theme {
-  --body-background-color: #{$body-background-color-light};
-  --sidebar-color: #{$sidebar-color-light};
-  --search-background-color: #{$search-background-color-light};
-  --table-background-color: #{$table-background-color-light};
-  --code-background-color: #{$code-background-color-light};
-  --feedback-color: #{$feedback-color-light};
-  --body-text-color: #{$body-text-color-light};
-  --body-heading-color: #{$body-heading-color-light};
-  --search-input-color: #{$search-input-color-light};
-  --search-input-active-color: #{$search-input-active-color-light};
-  --search-result-preview-color: #{$search-result-preview-color-light};
-  --nav-child-link-color: #{$nav-child-link-color-light};
-  --link-color: #{$link-color-light};
-  --link-hover-color: #{$link-hover-color-light};
-  --link-active-color: #{$link-active-color-light};
-  --btn-primary-color: #{$btn-primary-color-light};
-  --btn-hover-color: #{$btn-hover-color-light};
-  --btn-active-color: #{$btn-active-color-light};
-  --base-button-color: #{$base-button-color-light};
-  --border-color: #{$border-color-light};
+  @include declare_color_vars("body-background-color", $body-background-color-light);
+  @include declare_color_vars("sidebar-color", $sidebar-color-light);
+  @include declare_color_vars("search-background-color", $search-background-color-light);
+  @include declare_color_vars("table-background-color", $table-background-color-light);
+  @include declare_color_vars("code-background-color", $code-background-color-light);
+  @include declare_color_vars("feedback-color", $feedback-color-light);
+  @include declare_color_vars("body-text-color", $body-text-color-light);
+  @include declare_color_vars("body-heading-color", $body-heading-color-light);
+  @include declare_color_vars("search-input-color", $search-input-color-light);
+  @include declare_color_vars("search-input-active-color", $search-input-active-color-light);
+  @include declare_color_vars("search-result-preview-color", $search-result-preview-color-light);
+  @include declare_color_vars("nav-child-link-color", $nav-child-link-color-light);
+  @include declare_color_vars("link-color", $link-color-light);
+  @include declare_color_vars("link-hover-color", $link-hover-color-light);
+  @include declare_color_vars("link-active-color", $link-active-color-light);
+  @include declare_color_vars("btn-primary-color", $btn-primary-color-light);
+  @include declare_color_vars("btn-hover-color", $btn-hover-color-light);
+  @include declare_color_vars("btn-active-color", $btn-active-color-light);
+  @include declare_color_vars("base-button-color", $base-button-color-light);
+  @include declare_color_vars("border-color", $border-color-light);
 }
 
 @include set_for_dark_theme {
-  --body-background-color: #{$body-background-color-dark};
-  --sidebar-color: #{$sidebar-color-dark};
-  --search-background-color: #{$search-background-color-dark};
-  --table-background-color: #{$table-background-color-dark};
-  --code-background-color: #{$code-background-color-dark};
-  --feedback-color: #{$feedback-color-dark};
-  --body-text-color: #{$body-text-color-dark};
-  --body-heading-color: #{$body-heading-color-dark};
-  --search-input-color: #{$search-input-color-dark};
-  --search-input-active-color: #{$search-input-active-color-dark};
-  --search-result-preview-color: #{$search-result-preview-color-dark};
-  --nav-child-link-color: #{$nav-child-link-color-dark};
-  --link-color: #{$link-color-dark};
-  --link-hover-color: #{$link-hover-color-dark};
-  --link-active-color: #{$link-active-color-dark};
-  --btn-primary-color: #{$btn-primary-color-dark};
-  --btn-hover-color: #{$btn-hover-color-dark};
-  --btn-active-color: #{$btn-active-color-dark};
-  --base-button-color: #{$base-button-color-dark};
-  --border-color: #{$border-color-dark};
+  @include declare_color_vars("body-background-color", $body-background-color-dark);
+  @include declare_color_vars("sidebar-color", $sidebar-color-dark);
+  @include declare_color_vars("search-background-color", $search-background-color-dark);
+  @include declare_color_vars("table-background-color", $table-background-color-dark);
+  @include declare_color_vars("code-background-color", $code-background-color-dark);
+  @include declare_color_vars("feedback-color", $feedback-color-dark);
+  @include declare_color_vars("body-text-color", $body-text-color-dark);
+  @include declare_color_vars("body-heading-color", $body-heading-color-dark);
+  @include declare_color_vars("search-input-color", $search-input-color-dark);
+  @include declare_color_vars("search-input-active-color", $search-input-active-color-dark);
+  @include declare_color_vars("search-result-preview-color", $search-result-preview-color-dark);
+  @include declare_color_vars("nav-child-link-color", $nav-child-link-color-dark);
+  @include declare_color_vars("link-color", $link-color-dark);
+  @include declare_color_vars("link-hover-color", $link-hover-color-dark);
+  @include declare_color_vars("link-active-color", $link-active-color-dark);
+  @include declare_color_vars("btn-primary-color", $btn-primary-color-dark);
+  @include declare_color_vars("btn-hover-color", $btn-hover-color-dark);
+  @include declare_color_vars("btn-active-color", $btn-active-color-dark);
+  @include declare_color_vars("base-button-color", $base-button-color-dark);
+  @include declare_color_vars("border-color", $border-color-dark);
 }
 
 $body-background-color: var(--body-background-color) !default;
@@ -237,3 +242,32 @@ $btn-hover-color: var(--btn-hover-color) !default;
 $btn-active-color: var(--btn-active-color) !default;
 $base-button-color: var(--base-button-color) !default;
 $border-color: var(--border-color) !default;
+
+@function get_rgb_value($var) {
+  @if str-index(#{$var}, "var(--") {
+    @return var(--#{str-slice($var, 7, -2)}-rgb);
+  } @else {
+    @return rgb(red($var), green($var), blue($var));
+  }
+}
+
+$body-background-color-rgb: get_rgb_value($body-background-color);
+$sidebar-color-rgb: get_rgb_value($sidebar-color);
+$search-background-color-rgb: get_rgb_value($search-background-color);
+$table-background-color-rgb: get_rgb_value($table-background-color);
+$code-background-color-rgb: get_rgb_value($code-background-color);
+$feedback-color-rgb: get_rgb_value($feedback-color);
+$body-text-color-rgb: get_rgb_value($body-text-color);
+$body-heading-color-rgb: get_rgb_value($body-heading-color);
+$search-input-color-rgb: get_rgb_value($search-input-color);
+$search-input-active-color-rgb: get_rgb_value($search-input-active-color);
+$search-result-preview-color-rgb: get_rgb_value($search-result-preview-color);
+$nav-child-link-color-rgb: get_rgb_value($nav-child-link-color);
+$link-color-rgb: get_rgb_value($link-color);
+$link-hover-color-rgb: get_rgb_value($link-hover-color);
+$link-active-color-rgb: get_rgb_value($link-active-color);
+$btn-primary-color-rgb: get_rgb_value($btn-primary-color);
+$btn-hover-color-rgb: get_rgb_value($btn-hover-color);
+$btn-active-color-rgb: get_rgb_value($btn-active-color);
+$base-button-color-rgb: get_rgb_value($base-button-color);
+$border-color-rgb: get_rgb_value($border-color);
