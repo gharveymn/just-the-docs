@@ -101,16 +101,20 @@
   }
 }
 
-.btn-primary {
-  @if str-index($btn-primary-color, "var(--") {
-    @include set_for_light_theme {
+@if str-index($btn-primary-color, "var(--") {
+  @include set_for_light_theme {
+    .btn-primary {
       @include btn-color($white, $btn-primary-color-light);
     }
-  
-    @include set_for_dark_theme {
+  }
+
+  @include set_for_dark_theme {
+    .btn-primary {
       @include btn-color($white, $btn-primary-color-dark);
     }
-  } @else {
+  }
+} @else {
+  .btn-primary {
     @include btn-color($white, $btn-primary-color);
   }
 }
